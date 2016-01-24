@@ -1,3 +1,5 @@
+require './alchemyapi'
+
 class Main < ActiveRecord::Base
 	def self.getTweets
 
