@@ -45,7 +45,6 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-sass (3.2.0.1)
       sass (~> 3.2)
-
     buftok (0.2.0)
     builder (3.2.2)
     byebug (8.2.1)
@@ -97,7 +96,6 @@ GEM
     multi_json (1.11.2)
     multipart-post (2.0.0)
     naught (1.1.0)
-
     netrc (0.10.3)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
