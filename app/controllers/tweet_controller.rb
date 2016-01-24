@@ -1,6 +1,9 @@
-class WelcomeController < ApplicationController
-  def index
-  end
+class TweetController < ApplicationController
+
+	def create
+		
+	end
+
 
   def calculate_avgs
   	t = Tweet.create

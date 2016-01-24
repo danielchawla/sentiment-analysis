@@ -1,9 +1,9 @@
 <div class="main text-center">
 	<div class="search-main">
 		<h1>Hello, Sentiment Analysis!</h1>
-		 <%= form_tag "/teams", method: 'GET', id: 'teams_search', class: "navbar-form navbar-left", role: "search" do %>
+		 <%= form_tag "/calculate_avg", method: 'POST', id: 'teams_search', class: "navbar-form navbar-left", role: "search" do %>
 			<div class="form-group">
-				<%= text_field_tag 'q', params[:q], class: "form-control", placeholder: "Search Terms" %>
+				<%= text_field_tag 'q', params[:searchterm], class: "form-control", placeholder: "Search Terms" %>
 				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
 			</div>
 		<% end %>
