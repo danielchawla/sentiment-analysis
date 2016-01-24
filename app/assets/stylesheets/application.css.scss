@@ -17,14 +17,24 @@
  @import "bootstrap";
 
  .main {
- 	padding-top: 36px;
+ 	padding-top: 200px;
 
  }
 
- #q {
+ h1 {
+	font-size: 50px;
+ }
+
+ #search {
  	width: 300px;
  }
 
  #teams_search {
+ 	padding-top: 50px;
  	width: 100%;
  }
+
+ #result{
+ 	margin-top: 50px;
+ }
+

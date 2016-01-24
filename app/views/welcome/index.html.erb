@@ -1,10 +1,13 @@
 <div class="main text-center">
 	<div class="search-main">
-		<h1>Hello, Sentiment Analysis!</h1>
-		 <%= form_tag "/calculate_avg", method: 'POST', id: 'teams_search', class: "navbar-form navbar-left", role: "search" do %>
+		<h1>Welcome to Sentiment Analysis! </h1>
+		<p>Type in something (e.g. Donald Trump, Thailand, penguins) you want to get the world's current sentiment on.</p>
+		 <%= form_tag "/calculate", method: "get", id: 'teams_search', class: "navbar-form navbar-left" do %>
 			<div class="form-group">
-				<%= text_field_tag 'q', params[:searchterm], class: "form-control", placeholder: "Search Terms" %>
-				<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				<%= text_field_tag 'search', params[:searchterm], class: "form-control", placeholder: "Search term..." , autofocus: true %>
+				<button class="btn btn-default">
+					<span class="glyphicon glyphicon-search" type="submit"></span>
+				</button>
 			</div>
 		<% end %>
 	</div>

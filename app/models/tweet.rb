@@ -3,26 +3,30 @@ class Tweet < ActiveRecord::Base
 	require 'twitter'
 	require 'sentimental'
 
+	def calc_averages (searchterm)
 
-	def calc_averages (tweet)
 		client = Twitter::REST::Client.new do |config|
-		  config.consumer_key        = "qKxdvu4yXacwN6DtUEubaZUwo"
-		  config.consumer_secret     = "zKhyO6Pj4BX64nv4kjRE1i9iFlPbfPHyTbRJ5StUlD1mBuFKrq"
-		  config.access_token        = "129998888-So1iVy5THRkhRKn08tyAGhjCXgJcHvCG8I2IbyET"
-		  config.access_token_secret = "VDhFQWQVIm2pYlXdvbXMUWA4bi7Oj4GgPQYWyFJxurCag"
+			config.consumer_key        = "YOUR_CONSUMER_KEY"
+			config.consumer_secret     = "YOUR_CONSUMER_SECRET"
+			config.access_token        = "YOUR_ACCESS_TOKEN"
+			config.access_token_secret = "YOUR_ACCESS_SECRET"
 		end
 
 		Sentimental.load_defaults
 		analyzer = Sentimental.new
+		Sentimental.threshold = 1.0
 
 		sum = 0
 		count = 0
-		client.search(tweet, result_type: "recent").take(10).collect do |tweet|
-  			sum += analyzer.get_score (tweet.text)
-  			count += 1
+
+		client.search( searchterm , result_type: "recent").take(50).collect do |tweet|
+  			if (analyzer.get_score (tweet.text) != 0)
+  				sum += analyzer.get_score (tweet.text)
+  				count += 1
+  			end
   		end
 
-  		p sum/count
+  		(sum/count).round(2)
 
 	end
 end
