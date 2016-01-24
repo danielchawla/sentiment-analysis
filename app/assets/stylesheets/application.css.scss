@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ @import "bootstrap-sprockets"; 
+ @import "bootstrap";
+
+ .main {
+ 	padding-top: 36px;
+
+ }
+
+ #q {
+ 	width: 300px;
+ }
+
+ #teams_search {
+ 	width: 100%;
+ }
